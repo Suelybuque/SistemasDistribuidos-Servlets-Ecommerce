@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa de TI Nampula - Catálogo Online</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f4f7f9; text-align: center; padding: 50px; }
+        .container { background-color: #ffffff; padding: 40px; border-radius: 12px; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { color: #007bff; margin-bottom: 20px; }
+        p { color: #555; margin-bottom: 30px; }
+        .catalogo-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .catalogo-link:hover {
+            background-color: #1e7e34;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Bem-vindo à Loja de Equipamentos de TI</h1>
+    <p>Aceda ao nosso catálogo completo para visualizar e comprar os equipamentos disponíveis com entrega ao domicílio em Nampula.</p>
+
+    <!-- O link chama o URL mapeado para servlet.ListarItensServlet -->
+    <a href="catalogo" class="catalogo-link">
+        Ver Catálogo de Equipamentos
+    </a>
+</div>
+</body>
+</html>

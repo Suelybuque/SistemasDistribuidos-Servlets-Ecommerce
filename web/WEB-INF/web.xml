@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Descritor de Deploy da Aplicação Web (web.xml)
+Define o mapeamento de Servlets e a página de boas-vindas.
+-->
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+
+    <!-- 1. Mapeamento da Servlet de Listagem (ListarItensServlet) -->
+    <servlet>
+        <!-- Nome interno para referência no mapeamento -->
+        <servlet-name>ListarItens</servlet-name>
+        <!-- Caminho completo para a classe Servlet -->
+        <servlet-class>servlet.ListarItensServlet</servlet-class>
+        <!-- CRUCIAL: Load-on-startup 1 garante que o método init() rode na inicialização,
+             criando o catálogo de equipamentos. -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ListarItens</servlet-name>
+        <!-- URL que chama esta Servlet -->
+        <url-pattern>/catalogo</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Teste</servlet-name>
+        <servlet-class>servlet.TesteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Teste</servlet-name>
+        <url-pattern>/teste</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 2. Mapeamento da Servlet de Confirmação de Compra (ConfirmarCompraServlet) -->
+    <servlet>
+        <servlet-name>ConfirmarCompra</servlet-name>
+        <servlet-class>servlet.ConfirmarCompraServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ConfirmarCompra</servlet-name>
+        <url-pattern>/confirmar</url-pattern>
+    </servlet-mapping>
+
+    <!-- Página inicial que o Tomcat irá carregar quando a raiz for acedida -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+
+</web-app>
